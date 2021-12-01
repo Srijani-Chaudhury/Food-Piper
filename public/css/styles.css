@@ -24,6 +24,18 @@
 
 
 }
+.mulo{
+  display: inline-block;
+}
+.hum{
+  position: relative;
+}
+button.mulo{
+  position: absolute;
+  left:80%;
+  margin: 3%;
+}
+
 .na{
   border-radius: 5%;
   background: #1abc9c;

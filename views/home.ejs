@@ -1,12 +1,24 @@
+<%-include('partials/header')%>
+<% if(content!=null){ %>
 
-    <%-include('partials/header')%>
-    <% if(content!=null){ %>
+<%content.forEach(function(post){%>
+<form class="" action="/" method="post">
 
-      <%content.forEach(function(post){%>
-        <h1><%-post.title%></h1>
-        <p><%-post.para.substring(0,100)+"..." %> <span ><a href="/post/<%-post.title%>">Read More</a></span></p>
-      <%})%>
-    <%}%>
+  <div class="">
+    <div class="mulo">
+      <h1><%-post.title%></h1>
+      <p><%-post.para.substring(0,100)+"..." %> <span><a href="/post/<%-post.title%>">Read More</a></span></p>
+    </div>
+
+
+    <button type="submit" value="<%=post._id%>"name="button1" class="btn btn-primary mulo">Delete</button>
+
+  </div>
+
+</form>
+
+<%})%>
+<%}%>
 
 
     <%-include('partials/footer')%>

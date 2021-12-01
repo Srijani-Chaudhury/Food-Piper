@@ -23,18 +23,29 @@ app.use(express.static("public"));
 
 
 mongoose.connect("mongodb://localhost:27017/blogDB");
-const ItemSchema={
+
+const ItemSchema=new mongoose.Schema({
   title:String,
   para:String
-};
+});
+
 const blog=mongoose.model("Blog",ItemSchema);
 
 
 
 
-
 app.get('/',function(req,res){
-  res.render('home',{content:posts});
+  //res.render('home',{content:blog.find()});
+
+ blog.find(function(err,blogs){
+
+    if(err)
+    {
+      console.log("Error")
+    }
+  res.render('home',{content:blogs});
+
+  });
 })
 app.get('/about',function(req,res){
   res.render('about',{content:aboutContent});
@@ -46,13 +57,20 @@ app.get('/compose',function(req,res){
   res.render('compose');
 })
 app.get('/post/:id',function(req,res){
-  posts.forEach(function(post){
+  blog.find(function(err,posts){
+
+     if(err)
+     {
+       console.log("Error")
+     }
+    posts.forEach(function(post){
     const val=post.title;
     if(lod.lowerCase(val)===lod.lowerCase(req.params.id)){
       res.render('post',{content:post});
     }
   })
-})
+  });
+});
 app.post('/compose',function(req,res){
 
   const blog1=new blog({
@@ -61,6 +79,17 @@ app.post('/compose',function(req,res){
   });
   blog1.save();
   posts.push(blog1);
+  res.redirect('/');
+});
+
+app.post('/',function(req,res){
+  const id=req.body.button1;
+  blog.deleteOne({_id:id},function(err){
+    if(err)
+    {
+      console.log("Error Occured");
+    }
+  });
   res.redirect('/');
 });
 
