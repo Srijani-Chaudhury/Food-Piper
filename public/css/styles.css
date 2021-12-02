@@ -28,12 +28,13 @@
   display: inline-block;
 }
 .hum{
-  position: relative;
-}
-button.mulo{
   position: absolute;
   left:80%;
   margin: 3%;
+}
+.theme{
+  background: #1abc9c !important;
+  border:0;
 }
 
 .na{
