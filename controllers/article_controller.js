@@ -15,3 +15,27 @@ module.exports.article=function(req,res){
   })
   });
 };
+
+/*module.exports.delete=function(req,res){
+  const id=req.body.button1;
+  console.log(id);
+  postsDB.blog.deleteOne({_id:id},function(err){
+    if(err)
+    {
+      console.log("Error Occured");
+    }
+  });
+  res.redirect('/');
+};*/
+
+module.exports.delete=function(req,res){
+  const id=req.params.id;
+  //console.log(id);
+  postsDB.blog.deleteOne({_id:id},function(err){
+    if(err)
+    {
+      console.log("Error Occured");
+    }
+  });
+  res.redirect('/');
+}
