@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-    <title> Transparent Login Form Design </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <link rel="stylesheet" href="/css/login.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="/css/login.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
-    <body>
-    <div class="login-box">
-    <img src="../Images/avatar.png" class="avatar">
-        <h1>Login Here</h1>
-            <form action="/user/create-session" method="post">
-            <p>Username</p>
-            <input type="text" name="username" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="password" placeholder="Enter Password">
-            <input type="submit" name="submit" value="Login">
-            <a href="#">Forget Password</a>
-            <span><a href="/user/Sign-Up">Sign Up</a></span>
-
-            </form>
-
+<body>
+  <div class="wrapper">
+    <section class="left">
+      <h1>Learn to code by watching others</h1>
+      <p>  See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.</p>
+    </section>
+    <section class="right">
+      <h1 class="heading">
+        GET STARTED HERE
+      </h1>
+      <div class="form-group">
+        <form id="form" action="/user/create-session" method="post">
 
 
-        </div>
+          <div>
+            <input type="email" class="email" placeholder="Email Address" name="email" id="email">
+          
+            <span class="error">Email cannot be empty</span>
+          </div>
 
-    </body>
+          <div>
+            <input type="password" class="password"name="password" placeholder="Password" id="pass">
+
+            <span class="error">Password cannot be empty</span>
+          </div>
+
+          <button class="btn btn-green" type="submit">LOGIN</button>
+          <a href="#">Forgot Passord</a>
+          <p>
+            Not Registered? Sign-Up <span><a href="/user/Sign-Up">here</a></span></a>
+          </p>
+          <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+
+  <script src="/js/custom.js"></script>
+</body>
 </html>

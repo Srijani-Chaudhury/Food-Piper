@@ -4,11 +4,6 @@ module.exports.comp=function(req,res){
 };
 module.exports.poster=function(req,res){
 
-  /*const blog1=new postsDB.blog({
-    title:req.body.posttitle,
-    para:req.body.postbody
-  });*/
-
   postsDB.blog.create({
     title:req.body.postitle,
     para:req.body.postbody

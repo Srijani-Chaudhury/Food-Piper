@@ -5,8 +5,7 @@ const postsDB=require("../models/posts");
 
 
 module.exports.home=function(req,res){
-console.log(req.cookies);
-res.cookie('user_id',25);
+//console.log(req.cookies);
 postsDB.blog.find(function(err,blogs){
   if(err)
     {

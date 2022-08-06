@@ -21,9 +21,16 @@
 }
 .navbar-nav li{
   background: #1abc9c !important;
-
-
 }
+.profile{
+  background: url("/Images/icons8-account-24.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1abc9c;
+  height: 50px;
+  width: 50px;
+}
+
 .mulo{
   display: inline-block;
 }
@@ -36,7 +43,45 @@
   background: #1abc9c !important;
   border:0;
 }
-
+.dropdown-menu{
+  position: absolute;
+}
+.dd ul{
+  position:absolute;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+.dd ul li {
+  cursor: pointer;
+  background:  #1abc9c;
+  padding: 6%;
+  display: block;
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+.dd ul li:hover { background: #666;
+}
+.dd:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.navbar .container{
+  display: flex;
+  justify-content: space-between;
+}
+.dropdown-item {
+   display: block;
+}
 .na{
   border-radius: 5%;
   background: #1abc9c;

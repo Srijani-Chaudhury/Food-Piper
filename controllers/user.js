@@ -1,8 +1,16 @@
 const user=require("../models/user");
 module.exports.sign=function(req,res){
+  if(req.isAuthenticated())
+  {
+     res.redirect("/");
+  }
   res.render("Sign-Up");
 };
 module.exports.login=function(req,res){
+  if(req.isAuthenticated())
+  {
+     res.redirect("/");
+  }
   res.render("login");
 }
 
@@ -44,5 +52,15 @@ module.exports.create=function(req,res){
 }
 
 module.exports.createsession=function(req,res){
-  res.redirect("/");
+
+   return res.redirect('/');
+}
+module.exports.destroysession=function(req,res){
+  req.logout(function(err){
+    if(err)
+    {
+      console.log(err);
+    }
+  });
+  return res.redirect('/');
 }
