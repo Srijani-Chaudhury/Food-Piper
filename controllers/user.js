@@ -55,12 +55,3 @@ module.exports.createsession=function(req,res){
 
    return res.redirect('/');
 }
-module.exports.destroysession=function(req,res){
-  req.logout(function(err){
-    if(err)
-    {
-      console.log(err);
-    }
-  });
-  return res.redirect('/');
-}

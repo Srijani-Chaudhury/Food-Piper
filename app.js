@@ -7,8 +7,9 @@ const path=require("path");
 const db=require("./configs/model");
 const app = express();
 const cookies=require("cookie-parser");
+const sassMiddleware=require("node-sass-middleware");
 
-//used for session cookie
+//used for session cooki
 const session=require("express-session");
 const passport=require("passport");
 const passportLocal=require("./configs/passport-local-strategy")
@@ -20,6 +21,14 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
 //middlewares
+app.use(sassMiddleware({
+  src:'./public/scss',
+  dest:'./public/css',
+  // false in production mode
+  debug:false,
+  outputStyle:'extended',
+  prefix:'/css'
+}));
 app.use(express.static("public"));
 
 app.use(express.urlencoded());

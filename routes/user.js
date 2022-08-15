@@ -9,5 +9,5 @@ router.post("/create-session",passport.authenticate(
   'local',
   {failureRedirect:'/user/login'},
 ),logincontroller.createsession);
-router.get("/logout",logincontroller.destroysession);
+
 module.exports=router;

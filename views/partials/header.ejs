@@ -9,7 +9,7 @@
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 
 <body>
   <nav class="navbar navbar-default">
@@ -25,19 +25,18 @@
 
 
       </ul>
-      <div class="dd">
-        <button type="button" name="button" class="profile"></button>
-        <ul>
-          <%if(locals.user){%>
-            <li>Hi <%=user.username%></li>
-            <li><a href="/user/logout">Sign Out</a></li>
-          <%}else{%>
-            <li>Hi Random Stranger</li>
-            <li><a href="/user/login">Sign In</a></li>
-          <%}%>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle profile">
 
-        </ul>
-      </div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>Hi <%=locals.user.username%> <span><%=locals.user.email%></span></li>
+      <li><a href="https://vanila.io">Visit Profile</a></li>
+      <li><a href='/logout'>Log Out</a></li>
+    </ul>
+  </div>
+</div>
 
     </div>
   </nav>

@@ -1,19 +1,14 @@
 <%-include('partials/header')%>
 <% if(content!=null){ %>
-<p><%=user.name%></p>
 <%content.forEach(function(post){%>
 <form class="" action="/" method="post">
 
   <div class="">
     <div class="mulo">
       <h1><%-post.title%></h1>
-      <p><%-post.para.substring(0,100)+"..." %> <span><a href="/post/<%=post.title%>">Read More</a></span></p>
+      <p><%-post.para.substring(0,100)+"..." %> <span><a href="/article/<%-post._id%>">Read More</a></span></p>
+      <small>Author:-<%-post.username.username%></small>
     </div>
-
-<div class="mulo hum">
-  <button type="submit" name="button1" class="btn btn-primary theme "><span><a href="/delete-post/<%=post._id%>">DELETE</a></span></button>
-  <button type="submit" value="<%=post._id%>"name="button1" class="btn btn-primary theme">Update</button>
-</div>
 
 </div>
 
