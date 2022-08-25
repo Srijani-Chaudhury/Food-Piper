@@ -1,4 +1,29 @@
 <%-include('partials/header')%>
 <h1><%-locals.content.title%></h1>
 <p><%-locals.content.para%></p>
+<h2>Author:<%-locals.content.username.username%></h2>
+<h1>Comments</h1>
+<div class="comment-container">
+  <form class="" action="/article/<%=content._id%>/post" method="post">
+    <div class="form-group">
+    <label for="Comments">Comments</label>
+    <input name="content" type="text" class="form-control" id="Comments" aria-describedby="emailHelp" placeholder="Write Comment here">
+    <small id="emailHelp" class="form-text text-muted">Hey <%=locals.user.username%> let us know you feelings.</small>
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+    <div class="comment-box">
+      <%if(content.comment){%>
+        <%content.comment.forEach(function(comm){%>
+          <h3><%=comm.user.username%></h3>
+          <p><%=comm.content%></p>
+        <%})%>
+      <%}%>
+    </div>
+
+  </div>
+  </form>
+
+</div>
+
 <%-include('partials/footer')%>

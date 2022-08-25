@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-const user=require("../models/user");
+//const user=require('../models/user');
 const postschema=new mongoose.Schema({
   title:{
     type:String,
@@ -11,8 +11,12 @@ const postschema=new mongoose.Schema({
   },
   username:{
     type:mongoose.Schema.Types.ObjectId,
-    ref:user
-  }
+    ref:'User'
+  },
+  comment:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Comment'
+  }]
 },{
   timestamps:true
 });

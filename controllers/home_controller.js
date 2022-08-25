@@ -19,7 +19,7 @@ module.exports.home=function(req,res){
       {
         console.log(err)
       }
-    console.log(blogs);
+    //console.log(blogs);
     res.render('home',{content:blogs});
   });
 };

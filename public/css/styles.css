@@ -183,3 +183,13 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   box-sizing: border-box;
   transform: rotate(-135deg);
   margin-top: -9px; }
+
+.comment-container {
+  padding: 2%; }
+  .comment-container small {
+    margin-top: 1%; }
+  .comment-container .button-container {
+    margin-top: 1%; }
+    .comment-container .button-container button {
+      background-color: #1abc9c;
+      border: none; }

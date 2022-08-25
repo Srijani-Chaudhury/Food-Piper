@@ -216,3 +216,16 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform: rotate(-135deg);
     margin-top: -9px;
 }
+.comment-container{
+  padding: 2%;
+  small {
+    margin-top: 1%;
+  }
+  .button-container{
+    margin-top: 1%;
+    button {
+      background-color: $bgcolor;
+      border: none;
+    }
+  }
+}

@@ -19,7 +19,7 @@ router.get('/contact',contactcontroller.cont);
 router.get('/compose',passport.checkAuthentication,composecontroller.comp);
 router.post('/compose',composecontroller.poster);
 
-router.get('/article/:id',articlecontroller.article);
+
 router.get('/delete-post/:id',articlecontroller.delete);
 router.get("/logout",homecontroller.destroysession);
 
